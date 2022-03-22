@@ -1,7 +1,56 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text;
+using MyModels =  B111.Models; //alias
+using static System.Console; 
+
+uint maxb = uint.MaxValue;
+uint arg2 = 2;
+uint hi = 0;// старший 64 біт
+uint lo = 0;// молодший 64
+
+var person = new MyModels.Person();
+
+Console.WriteLine(person.Name);
+WriteLine(person.Name);
+checked
+{
+    lo = maxb + arg2;
+}
+unchecked
+{
+    lo = maxb + arg2;
+}
+
+try
+{
+    lo = checked(maxb + arg2);
+}
+catch (OverflowException e)
+{
+    lo = maxb + arg2;
+    hi++; 
+}
+
+var ov = maxb +arg2;
+try
+{
+    var r = mull(10,20);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+    throw new DivideByZeroException(ex.Message);
+}
+finally
+{
+    Console.WriteLine("FINNALY EXECUTE");
+}
+
 
 Console.WriteLine("Hello, World!");
+
+Environment.Exit(0);
+
 var a = 'D';
 var c = args[0];
 byte byteVar = 10; // 8 bit [0-255]
@@ -63,7 +112,22 @@ var ss = nameof(aT);
 //continue;
 // goto
 
+int mull(int a,int b)
+{
+    if (a+b > 1000)
+    {
+        throw new Exception("arg b must by less 1000");
+    }
+    return a * b;
+}
+int[] items = new int[10];
+int getItem(int index)
+{
+    if (index >= items.Length)
+        throw new OverflowException();
 
+    return items[index];
+}
 
 
 
