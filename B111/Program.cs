@@ -1,9 +1,43 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text;
 using MyModels =  B111.Models; //alias
-using static System.Console; 
+using static System.Console;
 
-uint maxb = uint.MaxValue;
+B111.MyInt nystruct;
+//nystruct.PublicField = 10;
+
+int rrr;
+//int rrrr = rrr;
+
+B111.MyInt nystruct2 = new B111.MyInt();
+nystruct.PublicField = 10;
+
+var aClass = new B111.A();
+var bClass = new B111.B(5);
+Console.WriteLine(bClass.ToString());
+bClass.PublicField = 1;
+aClass.PublicField = 1;
+Console.WriteLine(aClass.VitrualMethod());
+Console.WriteLine(bClass.VitrualMethod());
+var aClassFromB = (B111.A)bClass;
+aClassFromB.PublicField = 1;
+aClassFromB.VitrualMethod();
+
+
+
+int unb = 10;
+int cun = unb;
+
+object ob = (object)unb;
+int ob2 = (int)ob;
+
+
+showValue(unb);
+showValue(ob);
+showValueInt(unb);
+
+var ac = (B111.AbstractClass)bClass;
+
 uint arg2 = 2;
 uint hi = 0;// старший 64 біт
 uint lo = 0;// молодший 64
@@ -12,6 +46,7 @@ var person = new MyModels.Person();
 
 Console.WriteLine(person.Name);
 WriteLine(person.Name);
+uint maxb= uint.MaxValue;
 checked
 {
     lo = maxb + arg2;
@@ -129,8 +164,15 @@ int getItem(int index)
     return items[index];
 }
 
+void showValue(object value)
+{
+    Console.WriteLine(value.ToString());
+}
 
-
+void showValueInt(int value)
+{
+    Console.WriteLine(value.ToString());
+}
 
 
 
