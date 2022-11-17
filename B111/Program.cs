@@ -2,10 +2,73 @@
 using System.Text;
 using MyModels =  B111.Models; //alias
 using static System.Console;
+using B111;
+
+
+string ssss = "SD ghh RT hjkbkR";
+var result = ssss.GetSimbolsCount();
+
+int aaa = 10;
+
+
+var dr = new DemoClassRecord("rttr", null);
+dr.MutableProperty = 10;
+Console.WriteLine(dr);
+
+
+var dr2 = dr with {MyProperty2 = 10,MutableProperty = 20 };
+DelegateDemo.OnUserNameChange += DelegateDemo_OnUserNameChange2;
+DelegateDemo.OnUserNameChange += DelegateDemo_OnUserNameChange;
+
+void DelegateDemo_OnUserNameChange2(string arg1, string arg2)
+{
+    throw new NotImplementedException();
+}
+
+void DelegateDemo_OnUserNameChange(string arg1, string arg2)
+{
+    throw new NotImplementedException();
+}
+
+DelegateDemo.UserName = "sgsdhdshsfd";
+
+
+
+
+//TestDelegate(DelegateDemo);
+
+
+//string DelegateDemo(long i)
+//{
+//    Console.WriteLine("Delegate demo");
+//    return "";
+//}
+
+//void TestDelegate(Func<long,string> action)
+//{
+//    action(10);
+//}
+
+
+var enumFlagDemo = EnumFlagsDemo.Понеділок;
+enumFlagDemo |= EnumFlagsDemo.Вівторок;
+
+int? t = 10;
+string sss = "   ";
+int rr = t.Value;
+byte? ffffNulable = null;//0..255  null EF 0=null
+
+
+
+foreach (var f in  new StudentHibridCollection()){
+    Console.WriteLine(f);
+}
+
+var list = new List<string>();
+list.Add("ghgfhg");
 
 B111.MyInt nystruct;
-//nystruct.PublicField = 10;
-
+nystruct.PublicField = 10;
 int rrr;
 //int rrrr = rrr;
 
